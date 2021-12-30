@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Unlike the languages which are more commonly used in modern NLP problems, Arabic is *diglossic*. This means that it has two registers - a formal and an informal. The formal style of Arabic, known as MSA (Modern Standard Arabic) is the same across the Arab world. The informal style or dialect, which is what people actually speak in, is very geographically specific.
+Unlike the languages which are more commonly used in modern NLP, Arabic is *diglossic*. This means that it has two registers - a formal and an informal. The formal style of Arabic, known as MSA (Modern Standard Arabic) is the same across the Arab world. The informal style or dialect, which is what people actually speak in, is very geographically specific.
 
 Until recently it was rare that you would see dialectical Arabic written down since a book, or newpaper article, or academic paper would almost always be written in MSA. However, thanks in part to the advent of social media, dialect is seen in its written form far more often. This provides translators (especially machine translators) with an issue. How do you know which 'Arabic' you are translating?
 
