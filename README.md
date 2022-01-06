@@ -4,13 +4,13 @@
 
 Unlike the languages which are more commonly used in modern NLP, Arabic is *diglossic*. This means that it has two registers - a formal and an informal. The formal style of Arabic, known as MSA (Modern Standard Arabic) is the same across the Arab world. The informal style or dialect, which is what people actually speak in, is very geographically specific.
 
-Until recently it was rare that you would see dialectical Arabic written down since a book, or newpaper article, or academic paper would almost always be written in MSA. However, thanks in part to the advent of social media, dialect is seen in its written form far more often. This provides translators (especially machine translators) with an issue. How do you know which 'Arabic' you are translating?
+Until recently it was rare that you would see dialectical Arabic written down since a book, or newspaper article, or academic paper would almost always be written in MSA. However, thanks in part to the advent of social media, dialect is seen in its written form far more often. This provides translators (especially machine translators) with an issue. How do you know which 'Arabic' you are translating?
 
 
 **![](https://lh6.googleusercontent.com/mjIQ7DNB_hjam3xSFItkAgdy3vZHE5E9A8kHf4nIi7SVmzbov_YYczQBokf-ZH1TzW-OnTQqF6ZgcLxO4XGAIukNrZ5Oo4Ow0_6_PKhU_hkxnB7_ZEK-bHCB-SkOzdwdYwByRjTzMDjs)**
 ## Use Cases
 
-To be able to use the language of an Arabic Text itself to ascertain which dialect it is written would: 1- Aid translators, 2- Allow to geographically locate based on language, 3- Allow dialectologists some insight into that makes up a dialect.
+To be able to use the language of an Arabic Text itself to ascertain which dialect it is written would: 1- Aid translators, 2- Allow to geographically locate based on language, 3- Allow dialectologists some insight into what makes up a dialect.
 
 ## Objectives
 
@@ -34,9 +34,9 @@ The Datasets I used were:
 
 My hypotheses are:
 
- 1. It will be fairly easy ascertain which tweets are in MSA and which are in dialect. This is because there are certain fairly common features of MSA which are very specific and aren't shared in any dialects.
- 2. It will, however, be more difficult to diffrentiate between specific dialects because of shared features accross dialects.
- 3. In Bag of Words models certain common words will be used most in diffrentiating dialects. Words like 'فين', which means 'where' in Egyptian, and 'لماذا' which means 'why' in MSA will be obvious markers for a model.
+ 1. It will be fairly easy to ascertain which tweets are in MSA and which are in dialect. This is because there are certain fairly common features of MSA which are very specific and aren't shared in any dialects.
+ 2. It will, however, be more difficult to differentiate between specific dialects because of shared features across dialects.
+ 3. In Bag of Words models certain common words will be used most in differentiating dialects. Words like 'فين', which means 'where' in Egyptian, and 'لماذا' which means 'why' in MSA will be obvious markers for a model.
 
 ## Preparing the Arabic
 
@@ -63,7 +63,7 @@ There are a number of things we can do to solve some of these issues and make ou
 	This means mapping each Arabic letter on to a letter of the Roman alphabet.
 
  2. **Dediacritisation**
-	This means removing all the vowels from words, so there is no variation in words that are the same but some are vowelled and some aren't.
+	This means removing all the vowels from words, so there is no variation in words that are the same because some are vowelled and some aren't.
 
  3. **Normalisation**
 	Forcing all words to be spelt the same
@@ -76,9 +76,9 @@ There are a number of things we can do to solve some of these issues and make ou
 
 ## Our Datasets
 
-For our first model we want to diffrentiate between MSA and dialect. I labelled the datasets accordingly and had a look at the Data.
+For our first model we want to differentiate between MSA and dialect. I labelled the datasets accordingly and had a look at the data.
 
-Below are two wordclouds where the size of a word represents its frequency.
+Below are two WordClouds where the size of a word represents its frequency.
 
 What they demonstrate is that although there are some differences between the two registers, the most common words are the same - they are after all the same language.
 
@@ -89,7 +89,7 @@ What they demonstrate is that although there are some differences between the tw
 I ran a few models with different types of tokenisations. The best model I produced was the Logistic Regression Model with Count Vectorisation ( Accuracy Score 0.868 and F1 Score 0.897).
 
 **![](https://lh6.googleusercontent.com/txhJ8X2J1OjNYPv8c-w6BJduWY_DcZ-3OKaD-L9ca57N9mNgn5XR-p3L-jC1cEjNwy49AMguFIo6L2DA6Lv7m25CK4rLcoD9sgPTPFFjUtngcFUTo9hr1sBd_9yNTO_0YlyLAYW-4iRQ)**
-If we look under the hood of said model we discover a few interesting things. Here are the coeffeicients our model is using to classify each tweet, the larger a word is the more important it is to our model in classifying a tweet:
+If we look under the hood of said model we discover a few interesting things. Here are the coefficients our model is using to classify each tweet, the larger a word is the more important it is to our model in classifying a tweet:
 
 **![](https://lh5.googleusercontent.com/ZLzfToJWK91EDMvuOj_6u3BxBmb7HOCZloNMChgkADq0zCYFSZtA76e5AGrFG6sa_N_mEtHQhWlCNz_3pvYukrhw-PENbTS6brKg-2Ksoa3vH0HSpBUutaKf1IUAPY6d-kOT43izYzgA)**
 
@@ -112,7 +112,7 @@ The dataset split the dialectical data points according to country - this genera
 
 For these models I also experimented with n-grams of different lengths and with morphological tokenisation.
 
-n-grams are the length of token that your model deals with. If your model works with 1-grams then you are feeding singel words into your model, 2-grams will consider word pairs also and so on.
+n-grams are the length of token that your model deals with. If your model works with 1-grams then you are feeding single words into your model, 2-grams will consider word pairs also and so on.
 
 **![](https://lh6.googleusercontent.com/QQGAO3R5-EIccBL2i89xvQMt74aUdGlaO44YkqUFy9NdOVYW8GrNNyNW0Z-CCJdbigMdRB-O9CVS22THGXHSqN--hgEUu1AH2r0i8g_Nhc921I4QHhxKSQtTktWQwxtK56nc0dSZlqp4)**
 
@@ -126,9 +126,9 @@ All my models beat baseline (0.245) by a considerable amount but my best model w
 
 ### Confusion Matrix
 
-However if we take a look at ho wexactly this model is making its predictions we see there is a considerable reluctancy on part of the model to predict the minority class - Yemeni.**
+However if we take a look at how exactly this model is making its predictions we see there is a considerable reluctance on part of the model to predict the minority class - Yemeni.
 
-![](https://lh6.googleusercontent.com/v2XTrBc3H_zzdR408jGxs071ml5CGVnF5gdKsMGETbafdbODG0hFHdThNQVchjHkJy_JTa7Qky5F1zt1ZY8Y4ahEq08o5GUYT59hHwkXJRjOQc_dJFokjlKB614YDBC8jXmYa9YFfMoE)**
+**![](https://lh6.googleusercontent.com/v2XTrBc3H_zzdR408jGxs071ml5CGVnF5gdKsMGETbafdbODG0hFHdThNQVchjHkJy_JTa7Qky5F1zt1ZY8Y4ahEq08o5GUYT59hHwkXJRjOQc_dJFokjlKB614YDBC8jXmYa9YFfMoE)**
 
 ### Oversampling
 
@@ -136,7 +136,7 @@ I experimented with some Oversampling techniques to attempt to rectify this clas
 
 **![](https://lh5.googleusercontent.com/opR_OVpJbMB06r0JMlP_Udvg9Lufx5f9wWiG2Y7JR6fMlj7Oe6-pLyckx5vtgtAF7Pt299jTCdlwv_O2DQ0YusCB97wIeCw3vw-Bh5TygoYfptEf-FRvrfJOgmLmN718MPkkBIeBPOBm)**
 
-This was undoubtedly because even though we were artificially replicating the minority classes our model had not witnessed enough variety of said classes to establish when to classify it. This is demonstrated in how although it is predicting Yemen more often, it is predicting it incorrectly.
+This was undoubtedly because even though we were artificially replicating the minority classes our model had not witnessed enough variety of said classes to establish when to classify it. This is demonstrated in how, although it is predicting Yemen more often, it is predicting it incorrectly.
 
 **![](https://lh6.googleusercontent.com/QHN8hD1g2OOOP9OpyU1An1B5rGZR3Cv8lx7ugkRmEdP_p5eaCBZ5ZAyONMOWBWis7LpUsUbXd4rHX3kzUmE3dpgloyxqqBvcpOgPjsPHKys3y2rUD8i7duTeil5Nz1aMO0NL27BwUy7V)**
 
@@ -156,8 +156,8 @@ In order to get a sense of how our models were assessing our tweets let's have a
 These words/ phrases are for the most part very sensible classifiers of their various dialects. A few things stand out:
 
  - Strangely laughing appears as a pretty strong negative coefficient for Nile Basin Arabic.
- - the negative coefficients are far stronger than the positive ones in Yemeni.
- - The negative coefficeints in Yemeni Arabic are not Yemeni words, they are words used in all dialects. This supports the theory that the model has simply not seen enough Yemeni tweets to ascertain what makes it unique.
+ - The negative coefficients are far stronger than the positive ones in Yemeni.
+ - The negative coefficients in Yemeni Arabic are not Yemeni words, they are words used in all dialects. This supports the theory that the model has simply not seen enough Yemeni tweets to ascertain what makes it unique.
 
 ## Conclusions
 
