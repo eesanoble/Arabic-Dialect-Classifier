@@ -1,5 +1,29 @@
 # Arabic-Dialect-Classifier
 
+## Contents
+
+1.  Technologies and Tools Used
+2.  Introduction
+3.  Use Cases
+4.  Objectives
+5.  Data Source
+6.  Hypotheses
+7.  Preparing the Arabic
+8.  Our Datasets
+9.  Arabic vs MSA models
+10.  Dialect Classification Models
+		* n-grams
+		* Confusion Matrix
+		*  Oversampling
+		* Under the hood
+16.  Conclusions
+17.  Key Learnings
+18.  Next Steps
+
+## Technologies and Tools Used
+
+Pandas, numpy, matplotlib, seaborn, camel_tools, scipy, RegEx, WordCloud, sklearn, scikitplot, arabic_reshaper, bidi, os, codecs, imblearn, XGBoost
+
 ## Introduction
 
 Unlike the languages which are more commonly used in modern NLP, Arabic is *diglossic*. This means that it has two registers - a formal and an informal. The formal style of Arabic, known as MSA (Modern Standard Arabic) is the same across the Arab world. The informal style or dialect, which is what people actually speak in, is very geographically specific.
@@ -18,7 +42,7 @@ The goal of this project is to create a classification model which uses the text
 
 ## Data Source
 
-The data for this project was derived from a corpus of tweets put together for the purpose of the 2nd NADI (Nuanced Arabic Dialect Identification Shared Task) .
+The data for this project was derived from a corpus of tweets put together for the purpose of the 2nd NADI (Nuanced Arabic Dialect Identification Shared Task).
 
 The data was collected through the Twitter API using the location data to establish province and country of origin.
 
@@ -46,7 +70,7 @@ Arabic and NLP don't get along very well. This is for a number of reasons:
 	 The script goes right to left and letters take different forms depending on where they are in a word.
 
  2. **Diacritics**
-	 Vowels are optional and Arabic and are more often than not omitted.
+	 Vowels are optional in Arabic and are more often than not omitted.
 
  3. **Orthographic Ambiguity**
 	 Because of the optional vowels, it is often difficult to tell what a word is without context.
@@ -60,7 +84,7 @@ Arabic and NLP don't get along very well. This is for a number of reasons:
 There are a number of things we can do to solve some of these issues and make our models better:
 
  1. **Transliteration**
-	This means mapping each Arabic letter on to a letter of the Roman alphabet.
+	This means mapping each Arabic letter onto a letter of the Roman alphabet.
 
  2. **Dediacritisation**
 	This means removing all the vowels from words, so there is no variation in words that are the same because some are vowelled and some aren't.
@@ -86,7 +110,7 @@ What they demonstrate is that although there are some differences between the tw
 
 ## Arabic vs MSA Models
 
-I ran a few models with different types of tokenisations. The best model I produced was the Logistic Regression Model with Count Vectorisation ( Accuracy Score 0.868 and F1 Score 0.897).
+I ran a few models with different types of tokenisations. The best model I produced was the Logistic Regression Model with Count Vectorisation (Accuracy Score 0.868 and F1 Score 0.897).
 
 **![](https://lh6.googleusercontent.com/txhJ8X2J1OjNYPv8c-w6BJduWY_DcZ-3OKaD-L9ca57N9mNgn5XR-p3L-jC1cEjNwy49AMguFIo6L2DA6Lv7m25CK4rLcoD9sgPTPFFjUtngcFUTo9hr1sBd_9yNTO_0YlyLAYW-4iRQ)**
 If we look under the hood of said model we discover a few interesting things. Here are the coefficients our model is using to classify each tweet, the larger a word is the more important it is to our model in classifying a tweet:
@@ -167,6 +191,15 @@ These words/ phrases are for the most part very sensible classifiers of their va
  - Oversampling does not solve class imbalance in this case.
  - Morphological Tokenisation, n-grams, and reducing dimensionality improve model performance.
  - Due to the extreme dimensionality of my model we were unable to run some of the more complex models/ GridSearches.
+
+## Key Learnings
+
+-   I overcame the difficulty in translating NLP tools that are designed for far more morphologically and orthographically simpler languages.
+-   I attempted to overcome a class imbalance through Oversampling - although I was not successful I learnt that a lack in variety in data cannot be rectified by Random Oversampling.
+-   I noticed and, using a pipeline, sealed a leak in the folds of my cross validation when using Oversampling.
+-   Explored the efficacy of different length n-grams, morphological tokenisation and different models.
+-   In future I will use cloud computing to execute models with such massive dimensionality.
+-   I have learnt that Bag of Words models work fairly well for Arabic Dialect classification but due to limitations with the tools available for Arabic NLP it requires a lot more manual nudges on part of the Data Scientist.
 
 ## Next Steps
 
