@@ -1,0 +1,9 @@
+# Object file
+*.o
+
+.DS_Store
+# Ada Library Information
+*.ali
+
+
+
