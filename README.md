@@ -167,12 +167,9 @@ This was undoubtedly because even though we were artificially replicating the mi
 ### Under the hood
 
 In order to get a sense of how our models were assessing our tweets let's have a look at our model's coefficients.
-
+**![](https://lh4.googleusercontent.com/ICXnkmVrcvPihFn2Q4ZArrb_QAGvjItXu0IRuyyoNUCIodtHbJApop_MJR7gmX8T7u1GFWZC3cq4zGJ07DXNlG1DfpFV3QCp2rmimfB9Ofl7ZiOEHCHapW4TGUBWIWfxuwst7UptilFq)**
 **![](https://lh3.googleusercontent.com/ubCF9Fz-SVDXTIdpbm3DJR3v-GfsMwMgNm9wIkKaaP9IsYtQM2JNe3h-5AKOgYi4WkhjmBtqUgJ5L8MkzzQAEIX08DmRtBmSvnpHFUGXsAuNmRm8NZoAClCwS7zOgJsT-8sjTCSOIHJi)**
-
-
 **![](https://lh5.googleusercontent.com/yFi1WXNN0gW4dQy42vHXHFf8uTLPd1OQp4aOhWw5SLbfHwZxmxOw0ibzD-D0CBvL7QS8F8llPbToQvJL1r-1optwMsSJCyTH10fWBsnwE8hT6fYRmewpdxsynyrPQ63psy5mKkVX4e9p)**
-
 **![](https://lh6.googleusercontent.com/0Hu3x_IbeKI6jxkge5GZL21J0kGhHC_AySQHFWzOjljZxgOCD4ZsFMvNLii0CMr1xAlqFGfs4VjW-ovsacx7PMW5wxUkHE0k2IjFwN3xdVFFQ--eYYhFgERmVTbo5HXc5vtlabxomVfI)**
 **![](https://lh5.googleusercontent.com/h6AeDEhlH1g1PzgM_t6FHUBOwlshtzj4YGfI8Rm-FFnCxJ87rxynXAvPT_q795zU5AQSdG7q3xVmgDyzwvuAa8yN2bnM_7d6M00LK3HYOkg0OknUsKEXtVI063bkQgoX1XBXsjcQ7FUs)**
 **![](https://lh4.googleusercontent.com/ZSr7JTvwEEfocMytvPt9Z86sAneyZuCm2HP6aEgf9VPjmYNjrOZ6Jaf5QDMSyE_MG1kAJT0HPLIgWgeoBD3T-RDGUPc58y08uxFeCbEKIMYVGN-5jwZPf0ldFsXzNzZwXKEMRcWw-Y7G)**
